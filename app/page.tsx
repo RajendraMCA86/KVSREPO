@@ -6,6 +6,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import BlogSection from '@/components/sections/BlogSection';
 import Contact from '@/components/sections/Contact';
 import CTA from '@/components/sections/CTA';
+import Careers from '@/components/sections/Careers';
 
 export default function Home() {
   return (
@@ -13,11 +14,13 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Team />
+      {/* <Team /> */}
       <Testimonials />
       <BlogSection />
       <CTA />
+      <Careers />
       <Contact />
+    
     </>
   );
 }

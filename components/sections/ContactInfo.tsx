@@ -20,7 +20,7 @@ export default function ContactInfo() {
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: 'Visit Us',
-      content: 'House No. FW/27, Supercity, Dhaabli, Mangalia, Indore - 453771, M.P.',
+      content: 'FW/27, Supercity, Dhaabli, Mangalia, Indore - 453771, MP.',
       link: 'https://maps.google.com',
     },
     {
