@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="mb-6">
-              <Logo variant="light" />
+              <Logo/>
             </div>
             <p className="mb-6 text-gray-300">
               Transforming businesses through innovative technology solutions and services.
@@ -51,6 +51,11 @@ export default function Footer() {
               <li>
                 <Link href="/blog" className="text-gray-300 hover:text-primary transition-colors">
                   Blog
+                </Link>
+              </li>
+                <li>
+                <Link href="/careers" className="text-gray-300 hover:text-primary transition-colors">
+                  Careers
                 </Link>
               </li>
               <li>
@@ -101,8 +106,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 text-primary" />
-                <a href="tel:+918458829844" className="text-gray-300 hover:text-primary transition-colors">
-                  +91 8458829844
+                <a href="tel:+919529906991" className="text-gray-300 hover:text-primary transition-colors">
+                  +91 9529906991
                 </a>
               </li>
               <li className="flex items-center">

@@ -18,9 +18,8 @@ export default function AboutContent() {
           >
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Founded in 2015, KVS Techflow IT Solution started with a vision to bridge the gap between complex 
-              technology and business needs. What began as a small team of passionate technologists has grown 
-              into a comprehensive IT solutions provider serving clients across multiple industries.
+              We provide innovative IT solutions designed to help businesses thrive in the digital world.
+From custom software development to strategic digital marketing, our services are built to boost online presence, streamline operations, and drive growth.
             </p>
             <p className="text-gray-600 mb-6">
               Our journey has been defined by continuous learning, innovation, and a steadfast commitment 
