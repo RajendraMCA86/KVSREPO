@@ -36,7 +36,10 @@ export default function About() {
                 Who We Are
               </h2>
               <p className="text-gray-600 mb-6">
-                KVS Techflow IT Solution is a forward-thinking technology company that delivers innovative 
+                KVS Techflow IT Solutions for a Digital Future Enhancing your business through innovation, technology, and digital expertise.
+              </p>
+              <p className="text-gray-600 mb-6">
+                KVS is a forward-thinking technology company that delivers innovative 
                 IT solutions to businesses of all sizes. With years of industry experience and a team of 
                 highly skilled professionals, we empower organizations to leverage technology for growth 
                 and competitive advantage.

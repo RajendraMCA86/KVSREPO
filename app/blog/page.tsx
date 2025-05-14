@@ -12,7 +12,7 @@ export default function BlogPage() {
     <>
       <PageHeader 
         title="Our Blog" 
-        description="Insights, news and the latest tech trends"
+        description="From Thought to Action — Read, Learn, Grow.Insights, news and the latest tech trends"
       />
       <BlogList />
     </>

@@ -13,7 +13,7 @@ export default function ContactPage() {
     <>
       <PageHeader 
         title="Contact Us" 
-        description="Get in touch with our team"
+        description="Let’s Connect and Start Something Great .Get in touch with our team"
       />
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 py-16">
         <ContactInfo />

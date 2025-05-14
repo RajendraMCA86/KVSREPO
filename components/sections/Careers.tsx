@@ -76,7 +76,9 @@ export default function Careers() {
 			viewport={{ once: true }}
 			transition={{ duration: 0.5 }}
 		  >
-			Careers at KVS Techflow
+			Why Join Our Team
+			 <p className="text-gray-600 mb-6">We are growing fast and continuously looking to hire enterprising young engineers and management graduates to partner in our continued success
+				If you are a young graduate looking for an enriching work environment in the technology domain and are excited by tremendous professional and personal growth opportunities, Canopus is the place for you </p>
 		  </motion.h2>
 		  <motion.p 
 			className="text-gray-600"

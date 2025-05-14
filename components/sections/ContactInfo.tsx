@@ -32,6 +32,11 @@ export default function ContactInfo() {
 
   return (
     <div>
+       <img
+		  src="/images/contact1.jpeg" // Replace with the actual path to your image
+		  alt="About Us Banner"
+		  style={{ width: '100%', height: 'auto', borderRadius: '18px' }}
+		/>
       <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
       <p className="text-gray-600 mb-8">
         Have questions or need assistance? Reach out to us through any of the channels below, 
