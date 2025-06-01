@@ -10,9 +10,9 @@ interface LogoProps {
 export default function Logo({ variant = 'dark' }: LogoProps) {
   return (
     <Link href="/" className="inline-block">
-      <div className="relative w-40 h-14">
+      <div className="relative w-32 h-24 drop-shadow-lg">
         <Image
-          src="./images/kvs_logo.png"
+          src="./images/NNN.png"
           alt="KVS Techflow Logo"
           fill
           style={{ objectFit: 'contain' }}
