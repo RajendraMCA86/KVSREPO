@@ -12,7 +12,7 @@ export default function Logo({ variant = 'dark' }: LogoProps) {
     <Link href="/" className="inline-block">
       <div className="relative w-32 h-24 drop-shadow-lg">
         <Image
-          src="./images/NNN.png"
+          src="./images/kvs_logo.png"
           alt="KVS Techflow Logo"
           fill
           style={{ objectFit: 'contain' }}
