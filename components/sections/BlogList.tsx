@@ -32,9 +32,14 @@ export default function BlogList({ posts = blogPosts }: BlogListProps) {
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-  const handleImageLoad = (postId: string) => {
+  const handleImageLoad = (postId: any) => {
     setLoadedImages(prev => new Set([...prev, postId]));
-  };
+  };  
+// setLoadedImages(prev => {
+//   const newSet = new Set(prev);
+//   newSet.add(postId);
+//   return newSet;
+// });
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);

@@ -22,7 +22,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }): Meta
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
-      authors: [post.author],
+      authors: [post.author.name],
     },
   };
 };

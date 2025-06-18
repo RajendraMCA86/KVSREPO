@@ -1,4 +1,4 @@
-"use client"; // Required for useState and event handlers
+"use client";
 
 import Link from 'next/link';
 import { useState, FormEvent } from 'react';
@@ -78,7 +78,7 @@ export default function SignupPage() {
         description: "Your account has been created successfully. Please log in.",
       });
 
-      router.push('/auth/login');
+      router.push('/');
     } catch (error: any) {
       console.error('Error during signup:', error);
       setError(error.message || 'An error occurred during signup.');
