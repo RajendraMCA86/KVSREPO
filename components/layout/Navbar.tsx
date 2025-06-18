@@ -2,36 +2,32 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import BlogSubmenu from './BlogSubmenu';
+import ServicesSubmenu from './ServicesSubmenu';
 
-const navLinks = [
+type NavLink = 
+  | { href: string; label: string; dropdown?:  never; type?: never; component?: never; }
+  | { type: 'component'; component: React.ComponentType; href?: never; label?: never; dropdown?: never; };
+
+const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  {
-    label: 'Services',
-    dropdown: [
-      { href: '/services', label: 'IT Consulting' },
-      { href: '/services/DevelopmentServices', label: 'Development Services' },
-      { href: '/services/DigitalMarketing', label: 'Digital Marketing' },
-      { href: '/services/CloudSolutions', label: 'Cloud Solutions' },
-
-
-    ],
-  },
-  { href: '/blog', label: 'Blog' },
+  { type: 'component', component: ServicesSubmenu },
+  { type: 'component', component: BlogSubmenu },
   { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
+  { href: '/auth/login', label: 'Login' },
+  { href: '/auth/signup', label: 'Sign Up' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,46 +53,21 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Logo />
-
-        {/* Desktop Navigation */}
+          {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) =>
-            link.dropdown ? (
-              <div
-                key={link.label}
-                className="relative group"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                <span
-                  className={cn(
-                    "font-medium transition-colors cursor-pointer",
-                    scrolled ? "text-gray-700 hover:text-primary" : "text-white hover:text-primary"
-                  )}
-                >
-                  {link.label}
-                </span>
-                {dropdownOpen && (
-                  <div className="absolute center  mt-0 bg-white shadow-lg rounded-lg py-2 w-auto min-w-[10rem]">
-                    {link.dropdown.map((sublink) => (
-                        <Link
-                        key={sublink.href}
-                        href={sublink.href}
-                        className="block px-4 py-2 text-gray-900 hover:bg-primary hover:text-white transition-all duration-200 ease-in-out"
-                        >
-                        {sublink.label}
-                        </Link>
-                    ))}
-                  </div>
-                )}
+          {navLinks.map((link, index) => 
+            link.type === 'component' ? (
+              <div key={index} className={cn(
+                scrolled ? "text-gray-700" : "text-white"
+              )}>
+                <link.component />
               </div>
             ) : (
-              <Link
+              <Link 
                 key={link.href}
                 href={link.href}
                 className={cn(
                   "font-medium transition-colors",
-                  pathname === link.href ? "text-primary font-bold" : "",
                   scrolled ? "text-gray-700 hover:text-primary" : "text-white hover:text-primary"
                 )}
               >
@@ -105,10 +76,9 @@ export default function Navbar() {
             )
           )}
         </nav>
-
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden">
-          <button
+          <button 
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             className={cn(
@@ -120,7 +90,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
+      
       {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
@@ -130,39 +100,29 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-white"
-          >
-            <div className="container mx-auto py-4 space-y-4">
-              {navLinks.map((link) =>
-                link.dropdown ? (
-                  <div key={link.label} className="space-y-2">
-                    <span className="block font-medium text-gray-700">{link.label}</span>
-                    <div className="pl-4 space-y-2">
-                      {link.dropdown.map((sublink) => (
-                        <Link
-                          key={sublink.href}
-                          href={sublink.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block text-gray-700 hover:text-primary transition-colors"
-                        >
-                          {sublink.label}
-                        </Link>
-                      ))}
+          >            <div className="container mx-auto py-4 space-y-4">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {link.type === 'component' ? (
+                    <div className="py-2 text-gray-700">
+                      <link.component />
                     </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "block py-2 font-medium transition-colors",
-                      pathname === link.href ? "text-primary font-bold" : "text-gray-700 hover:text-primary"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+                  ) : (
+                    <Link 
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-2 text-gray-700 hover:text-primary font-medium transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         )}

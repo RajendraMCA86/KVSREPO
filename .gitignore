@@ -1,8 +1,8 @@
 .next
 yarn.lock
 yarn-error.log
-.env    
-.env.local
+# .env    
+# .env.local
 node_modules
 package-lock.json
 out/

@@ -16,7 +16,7 @@ export default function Logo({ variant = 'dark' }: LogoProps) {
           alt="KVS Techflow Logo"
           fill
           style={{ objectFit: 'contain' }}
-          className={cn("w-full h-full", variant === 'light' ? "brightness-0 invert" : "")}
+          className={cn("w-50% h-50%", variant === 'light' ? "brightness-0 invert" : "")}
           priority
         />
       </div>
