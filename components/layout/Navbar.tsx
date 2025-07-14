@@ -21,8 +21,8 @@ const navLinks: NavLink[] = [
   { type: 'component', component: BlogSubmenu },
   { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
-  { href: '/auth/login', label: 'Login' },
-  { href: '/auth/signup', label: 'Sign Up' },
+  // { href: '/auth/login', label: 'Login' },
+  // { href: '/auth/signup', label: 'Sign Up' },
 ];
 
 export default function Navbar() {
