@@ -3,9 +3,11 @@ yarn.lock
 yarn-error.log
 # .env    
 # .env.local
-node_modules
 # package-lock.json
+node_modules
 out/
 out
 *.log
 *.tsbuildinfo
+/auth/login/
+/auth/signup/

@@ -13,6 +13,9 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from 'lucide-react';
 
+export const dynamic = "force-dynamic";
+
+
 export default function SignupPage() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
