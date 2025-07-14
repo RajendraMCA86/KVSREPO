@@ -9,5 +9,3 @@ out/
 out
 *.log
 *.tsbuildinfo
-/auth/login/
-/auth/signup/
