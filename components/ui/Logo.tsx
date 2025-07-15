@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import kvslogo from '@/public/images/kvs_logo.png';
 import { cn } from '@/lib/utils';
-
 interface LogoProps {
   variant?: 'light' | 'dark';
 }
@@ -12,7 +10,7 @@ export default function Logo({ variant = 'dark' }: LogoProps) {
     <Link href="/" className="inline-block">
       <div className="relative w-32 h-24 drop-shadow-lg">
         <Image
-          src="./images/kvs_logo.png"
+          src="/images/kvs_logo.png"
           alt="KVS Techflow Logo"
           fill
           style={{ objectFit: 'contain' }}
