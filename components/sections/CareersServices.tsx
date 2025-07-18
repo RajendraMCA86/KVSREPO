@@ -115,13 +115,6 @@ const CareersServices: React.FC = () => {
 					Submit Application
 				</button>
 			</form>
-
-			<div style={{ marginTop: '40px', textAlign: 'center' }}>
-				<h2>Contact Us</h2>
-				<p>If you have any questions, feel free to reach out to us at:</p>
-				<p>Email: hr@kvstechflow.com</p>
-				<p>Phone: +91-8458829844</p>
-			</div>
 		</div>
 	);
 };

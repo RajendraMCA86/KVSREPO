@@ -179,34 +179,34 @@ export const services: Service[] = [
     ]
   },
   {
-    id: "cybersecurity",
-    title: "Cybersecurity",
+    id: "digital-marketing",
+    title: "Digital Marketing",
     icon: "Server",
-    shortDescription: "Protect your business from digital threats",
-    description: "Our cybersecurity services help you protect your business from evolving cyber threats. We implement robust security measures to safeguard your data, systems, and network infrastructure.",
+    shortDescription: "Enhance your online presence and reach your target audience",
+    description: "Our Digital Marketing services help you reach your target audience effectively and drive engagement through various online channels.",
     features: [
-      "Security assessments",
-      "Penetration testing",
-      "Vulnerability management",
-      "Security monitoring",
-      "Incident response"
+      "SEO optimization",
+      "Content marketing",
+      "Social media management",
+      "Email marketing",
+      "Pay-per-click advertising"
     ],
     offerings: [
       {
-        title: "Security Assessments",
-        description: "Identify vulnerabilities in your systems and applications"
+        title: "SEO Services",
+        description: "Optimize your website to rank higher in search engine results and attract organic traffic."
       },
       {
-        title: "Managed Security Services",
-        description: "Ongoing monitoring and protection against threats"
+        title: "Content Marketing",
+        description: "Create and distribute valuable content to engage your target audience and drive conversions."
       },
       {
-        title: "Security Training",
-        description: "Educate your team on security best practices"
+        title: "Social Media Management",
+        description: "Manage your social media presence and engage with your audience effectively."
       },
       {
-        title: "Compliance Management",
-        description: "Ensure adherence to industry regulations and standards"
+        title: "Pay per Click Advertising",
+        description: "Drive targeted traffic to your website through paid search advertising."
       }
     ]
   }

@@ -9,7 +9,7 @@ const services = [
   { name: 'Web Development', href: '/services/web-development' },
   { name: 'Mobile App Development', href: '/services/mobile-apps' },
   { name: 'Cloud Solutions', href: '/services/cloud-services' },
-  { name: 'CyberSecurity', href: '/services/cybersecurity' },
+  { name: 'Digital Marketing', href: '/services/digital-marketing' },
   { name: 'IT Consulting', href: '/services/it-consulting' },
 ];
 

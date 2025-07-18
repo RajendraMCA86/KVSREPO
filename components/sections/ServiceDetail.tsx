@@ -126,12 +126,12 @@ function getTechnologies(serviceId: string): string[] {
         'Process Optimization',
         'Agile Methodologies',
       ];
-    case 'cybersecurity':
+    case 'digital-marketing':
       return [
-        'Penetration Testing',
-        'Security Audits',
-        'Encryption',
-        'Network Security',
+        'SEO',
+        'Content Marketing',
+        'Social Media Marketing',
+        'Email Marketing',
         'Identity Management',
         'Compliance Frameworks',
       ];

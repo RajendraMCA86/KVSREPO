@@ -294,14 +294,14 @@ export const chatbotConfig = {
         "Measured and iterative progress"
       ]
     },
-    cybersecurity: {
-      title: "Cybersecurity",
-      description: "Our cybersecurity services help you protect your business from evolving cyber threats. We implement robust security measures to safeguard your data, systems, and network infrastructure.",
+    DigitalMarketing: {
+      title: "Digital Marketing",
+      description: "Our Digital Marketing services help you reach your target audience effectively and drive engagement through various online channels.",
       capabilities: [
-        "Real-time threat detection and response",
-        "Zero Trust Architecture implementation",
-        "Advanced endpoint protection",
-        "24/7 security monitoring",
+        "Search Engine Optimization (SEO)",
+        "Content Marketing",
+        "Social Media Marketing",
+        "Email Marketing",
         "Compliance and risk management"
       ],
       services: [
@@ -324,12 +324,12 @@ export const chatbotConfig = {
       ],
       faqs: [
         {
-          question: "What are essential cybersecurity measures for small businesses?",
-          answer: "Essential measures include strong password policies, multi-factor authentication, regular software updates, employee training, data backup solutions, and incident response planning."
+          question: "What are essential Digital Marketing strategies for small businesses?",
+          answer: "Essential strategies include strong SEO practices, engaging content marketing, active social media presence, targeted email campaigns, and data-driven decision making."
         },
         {
-          question: "How do you handle security incidents?",
-          answer: "We follow a comprehensive incident response plan that includes containment, investigation, remediation, and prevention of future incidents."
+          question: "How do you handle Digital Marketing campaigns?",
+          answer: "We follow a comprehensive campaign management process that includes planning, execution, monitoring, and optimization to ensure the best results."
         }
       ],
       bestPractices2025: [
@@ -344,7 +344,7 @@ export const chatbotConfig = {
   },
   commonResponses: {
     greeting: "Hello! I'm the KVS Techflow virtual assistant. How can I help you today?",
-    serviceInquiry: "We offer a range of technology services including web development, mobile apps, cloud solutions, IT consulting, and cybersecurity. Which area would you like to know more about?",
+    serviceInquiry: "We offer a range of technology services including web development, mobile apps, cloud solutions, IT consulting, and Digital Marketing. Which area would you like to know more about?",
     pricing: "Our pricing varies based on project requirements. I'd be happy to connect you with our team for a detailed quote based on your specific needs.",
     contact: "You can reach our team by email at contact@kvstechflow.com or by phone at (555) 123-4567. Would you like me to have someone contact you?",
     unavailable: "I apologize, but I'm not able to provide that specific information. Would you like me to connect you with a team member who can help?",
@@ -372,7 +372,7 @@ export const chatbotConfig = {
         client: "Financial Services Inc.",
         industry: "Finance",
         challenge: "Enhancing data security and system performance",
-        solution: "Implemented comprehensive cybersecurity solutions",
+        solution: "Implemented comprehensive Digital Marketing ",
         results: "Enhanced data protection and improved system performance",
         testimonial: "Security was our main concern, and KVS Techflow delivered a comprehensive solution that protected our sensitive data while improving system performance."
       }
@@ -387,7 +387,7 @@ export const chatbotConfig = {
         "Mobile Applications",
         "Cloud Solutions",
         "IT Consulting",
-        "Cybersecurity"
+        "Digital Marketing"
       ]
     },
     mission: "To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage. We are committed to delivering exceptional value through our expertise, reliability, and customer-centric approach.",
@@ -506,7 +506,7 @@ export const chatbotConfig = {
         "Advanced security measures"
       ]
     },
-    cybersecurity: {
+    DigitalMarketing: {
       essentialMeasures: [
         {
           measure: "Access Control",

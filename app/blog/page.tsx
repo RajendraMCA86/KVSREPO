@@ -59,7 +59,7 @@ export default function BlogPage() {
                   <CardContent>
                     <div className="flex items-center justify-between">
                       <Link href={`/blog/${post.slug}`}>
-                        <Button variant="default" >
+                        <Button variant="outline" className="text-sm">
                           Read More <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>

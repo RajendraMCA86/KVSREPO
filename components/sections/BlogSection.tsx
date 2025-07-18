@@ -77,7 +77,7 @@ export default function BlogSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="ghost" className="text-primary hover:text-primary border border-transparent hover:border-primary p-3 hover:bg-primary/10 transition-all duration-300">
+                    <Button variant="ghost" >
                       Read More <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
