@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Background Image with Parallax Effect */}
       <motion.div 
         className="absolute inset-0 z-0" 
-        style={{ y, opacity }}
+        // style={{ y, opacity }}
       >
         <Image
           src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600"

@@ -65,7 +65,7 @@ export default function BlogList({ posts = blogPosts }: BlogListProps) {
             key={post.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <div className="relative h-48 bg-gray-100 overflow-hidden">

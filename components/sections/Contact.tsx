@@ -23,8 +23,14 @@ import { useToast } from '@/hooks/use-toast';
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
   email: z.string().email({ message: 'Please enter a valid email address' }),
-  phone: z.string().optional(),
-  subject: z.string().min(5, { message: 'Subject must be at least 5 characters' }),
+  phone: z.string()
+    .min(10, { message: 'Phone number must be at least 10 digits' })
+    .max(15, { message: 'Phone number must not exceed 15 digits' })
+    .regex(/^[0-9+\-() ]+$/, { message: 'Please enter a valid phone number' })
+    .refine((val) => val.replace(/[^0-9]/g, '').length >= 10, {
+      message: 'Phone number must have at least 10 digits'
+    }),
+    subject: z.string().min(5, { message: 'Subject must be at least 5 characters' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters' }),
 });
 
@@ -50,19 +56,35 @@ export default function Contact() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Show success message
-    toast({
-      title: "Message Sent Successfully",
-      description: "Thank you for contacting us. We'll get back to you shortly.",
-      className: "bg-green-50 border-green-500 text-green-800",
-    });
-    
-    // Reset form
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('https://formsubmit.co/hr@kvstechflow.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully",
+          description: "Thank you for contacting us. We'll get back to you shortly.",
+          className: "bg-green-50 border-green-500 text-green-800",
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        className: "bg-red-50 border-red-500 text-red-800",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -83,7 +105,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, }}
           >
             Have a question or want to discuss your project? Fill out the form below, 
             and we'll get back to you as soon as possible.
@@ -95,10 +117,20 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, }}
         >
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form 
+              onSubmit={form.handleSubmit(onSubmit)} 
+              className="space-y-6"
+              action="https://formsubmit.co/hr@kvstechflow.com" 
+              method="POST"
+            >
+              {/* Add hidden fields for FormSubmit.co configuration */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_subject" value="New Contact Form Submission" />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
@@ -135,7 +167,7 @@ export default function Contact() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone (Optional)</FormLabel>
+                      <FormLabel>Phone</FormLabel>
                       <FormControl>
                         <Input placeholder="Your phone number" {...field} />
                       </FormControl>
