@@ -85,7 +85,7 @@ export default function Careers() {
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
-			transition={{ duration: 0.5, delay: 0.2 }}
+			transition={{ duration: 0.5, delay: 0.1 }}
 		  >
 			Have a question or want to discuss your project? Fill out the form below, 
 			and we'll get back to you as soon as possible.
@@ -97,7 +97,7 @@ export default function Careers() {
 		  initial={{ opacity: 0, y: 20 }}
 		  whileInView={{ opacity: 1, y: 0 }}
 		  viewport={{ once: true }}
-		  transition={{ duration: 0.5, delay: 0.4 }}
+		  transition={{ duration: 0.5, delay: 0.2 }}
 		>
 		  <Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
