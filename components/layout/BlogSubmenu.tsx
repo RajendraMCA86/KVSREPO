@@ -69,12 +69,7 @@ const BlogSubmenu: React.FC<BlogSubmenuProps> = ({
   }
   setOpen(!open);
 };
-  // const toggleMenu = () => {
-  //   setOpen(!open);
-  //   if (setActiveDropdown) {
-  //     setActiveDropdown(null);
-  //   }
-  // };
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768); // <768px = mobile
     checkMobile();
@@ -92,7 +87,6 @@ const BlogSubmenu: React.FC<BlogSubmenuProps> = ({
         className="flex items-center space-x-1 font-medium transition-colors"
         aria-expanded={open}
         onClick={() => isMobile ? toggleMenu() : null}
-        // onClick={toggleMenu}
       >
         <span>Blog</span>
         <ChevronDown

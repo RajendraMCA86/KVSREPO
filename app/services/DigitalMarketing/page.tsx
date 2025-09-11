@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import PageHeader from '@/components/layout/PageHeader';
-import CareersServices from '@/components/sections/CareersServices';
 import DigitalMarketing from '@/components/sections/DigitalMarketing';
+// import CareersServices from '@/components/sections/CareersServices';
 
 export const metadata: Metadata = {
   title: 'About Us | KVS Techflow IT Solution',
