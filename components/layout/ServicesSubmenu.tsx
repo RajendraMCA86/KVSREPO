@@ -24,7 +24,7 @@ const services = [
   { 
     name: "Digital Marketing", 
     href: "/services/digital-marketing", 
-    Description: "SEO, PPC, and social media marketing"
+    Description: "SEO, PPC, and social media marketing",
   },
   { 
     name: "IT Consulting", 
@@ -61,15 +61,8 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
     }
   };
 
-  // const toggleMenu = () => {
-  //   setOpen(!open);
-  //   if (setActiveDropdown) {
-  //     setActiveDropdown(null);
-  //   }
-  // };
   const toggleMenu = () => {
   if (setActiveDropdown) {
-    // If blog is open, close it and open services
     setActiveDropdown(prev =>
       prev === "blog" ? "services" : (open ? null : "services")
     );
@@ -88,12 +81,11 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
     <div className="relative"
       onMouseEnter={!isMobile ? () => setOpen(true) : undefined}
       onMouseLeave={!isMobile ? () => setOpen(false) : undefined} 
-      >
+    >
       <button
         className="flex items-center space-x-1 font-medium transition-colors w-full"
         aria-expanded={open}
         onClick={() => isMobile ? toggleMenu() : null}
-        // onClick={toggleMenu}
       >
         <span>Services</span>
         <ChevronDown
@@ -115,15 +107,17 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
           >
             <div className="p-2 space-y-2">
               {services.map((service) => (
-                <Link
-                  key={service.href}
-                  href={service.href}
-                  onClick={handleLinkClick}
-                  className="flex flex-col px-4 py-2 text-sm rounded-md  hover:bg-primary/80 transition-colors  text-gray-900 hover:text-white"
-                >
-                  <span className="font-medium">{service.name}</span>
-                  <span className="text-xs mt-0.5">{service.Description}</span>
-                </Link>
+                <div key={service.href} className="relative group">
+                   
+                    <Link
+                      href={service.href}
+                      onClick={handleLinkClick}
+                      className="flex flex-col px-4 py-2 text-sm rounded-md hover:bg-primary/80 transition-colors text-gray-900 hover:text-white"
+                    >
+                      <span className="font-medium">{service.name}</span>
+                      <span className="text-xs mt-0.5">{service.Description}</span>
+                    </Link>
+                </div>
               ))}
               <div className="border-t border-gray-100 my-2" />
               <Link

@@ -1,9 +1,17 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { Service } from '@/data';
-import { Card, CardContent } from '@/components/ui/card';
-import { MonitorSmartphone, Cloud, Code, LineChart, Server } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Service } from "@/data";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  MonitorSmartphone,
+  Cloud,
+  Code,
+  LineChart,
+  Server,
+  ArrowRight
+} from "lucide-react";
+import Link from "next/link";
 
 interface ServiceDetailProps {
   service: Service;
@@ -15,10 +23,11 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
     Cloud,
     Code,
     LineChart,
-    Server
+    Server,
   };
 
-  const IconComponent = iconComponents[service.icon as keyof typeof iconComponents];
+  const IconComponent =
+    iconComponents[service.icon as keyof typeof iconComponents];
 
   return (
     <section className="py-16">
@@ -33,36 +42,58 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             <div className="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
               <IconComponent className="h-8 w-8 text-primary" />
             </div>
-            
+
             <h2 className="text-3xl font-bold mb-6">About This Service</h2>
             <p className="text-gray-600 mb-8">{service.description}</p>
-            
+
             <h3 className="text-2xl font-semibold mb-4">Key Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {service.features.map((feature, index) => (
-                <Card key={index} className="bg-gray-50 border-none">
-                  <CardContent className="pt-6">
-                    <p className="text-gray-800">{feature}</p>
-                  </CardContent>
-                </Card>
+                <Link 
+                  key={index}
+                  href={feature.toLowerCase().includes('seo optimization') ? '/services/digital-marketing/seo' : '#'}
+                  className={feature.toLowerCase().includes('seo optimization') ? 'cursor-pointer' : ''}
+                >
+                  <Card
+                    className={`bg-gray-50 border-none rounded-xl shadow-lg 
+                    transform transition-transform duration-300 hover:scale-105 
+                    ${feature.toLowerCase().includes('seo optimization') ? 'hover:bg-primary/5' : ''}`}
+                  >
+                    <CardContent className="pt-6">
+                      <div className="flex justify-between items-center">
+                        <p className="text-gray-800">{feature}</p>
+                        {feature.toLowerCase().includes('seo optimization') && (
+                          <ArrowRight className="w-5 h-5 text-primary" />
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
-            
+
             <h3 className="text-2xl font-semibold mb-4">Our Approach</h3>
             <div className="space-y-6">
               {service.offerings.map((offering, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="text-xl font-semibold mb-2">{offering.title}</h4>
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+                >
+                  <h4 className="text-xl font-semibold mb-2">
+                    {offering.title}
+                  </h4>
                   <p className="text-gray-600">{offering.description}</p>
                 </div>
               ))}
             </div>
           </div>
-          
+
           <div>
             <Card className="sticky top-24">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Technologies We Use</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Technologies We Use
+                </h3>
                 <div className="space-y-4">
                   {getTechnologies(service.id).map((tech, index) => (
                     <div key={index} className="flex items-center">
@@ -82,58 +113,58 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
 
 function getTechnologies(serviceId: string): string[] {
   switch (serviceId) {
-    case 'web-development':
+    case "web-development":
       return [
-        'React.js',
-        'Next.js',
-        'TypeScript',
-        'Node.js',
-        'Express.js',
-        'MongoDB',
-        'PostgreSQL',
-        'GraphQL',
-        'REST APIs',
-        'Tailwind CSS',
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "PostgreSQL",
+        "GraphQL",
+        "REST APIs",
+        "Tailwind CSS",
       ];
-    case 'mobile-apps':
+    case "mobile-apps":
       return [
-        'React Native',
-        'Flutter',
-        'Swift',
-        'Kotlin',
-        'Firebase',
-        'AWS Amplify',
-        'Native APIs',
-        'Push Notifications',
+        "React Native",
+        "Flutter",
+        "Swift",
+        "Kotlin",
+        "Firebase",
+        "AWS Amplify",
+        "Native APIs",
+        "Push Notifications",
       ];
-    case 'cloud-services':
+    case "cloud-services":
       return [
-        'AWS',
-        'Google Cloud',
-        'Azure',
-        'Docker',
-        'Kubernetes',
-        'Terraform',
-        'CI/CD',
-        'Microservices',
+        "AWS",
+        "Google Cloud",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "CI/CD",
+        "Microservices",
       ];
-    case 'it-consulting':
+    case "it-consulting":
       return [
-        'Business Analysis',
-        'System Architecture',
-        'Technology Strategy',
-        'Digital Transformation',
-        'Process Optimization',
-        'Agile Methodologies',
+        "Business Analysis",
+        "System Architecture",
+        "Technology Strategy",
+        "Digital Transformation",
+        "Process Optimization",
+        "Agile Methodologies",
       ];
-    case 'digital-marketing':
+    case "digital-marketing":
       return [
-        'SEO',
-        'Content Marketing',
-        'Social Media Marketing',
-        'Email Marketing',
-        'Identity Management',
-        'Compliance Frameworks',
+        "SEO",
+        "Content Marketing",
+        "Social Media Marketing",
+        "Email Marketing",
+        "Identity Management",
+        "Compliance Frameworks",
       ];
     default:
       return [];

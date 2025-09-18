@@ -33,7 +33,7 @@ const DevelopmentServices: React.FC = () => {
 	return (
 		<div className={styles.container}>
 		  <img
-		  src="/images/DEV.jpg" // Replace with the actual path to your image
+		  src="/images/DEV.jpg" 
 		  alt="About Us Banner"
 		  style={{ width: '100%', height: 'auto', borderRadius: '18px' }}
 		/>
