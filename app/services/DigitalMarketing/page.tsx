@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import PageHeader from '@/components/layout/PageHeader';
-import DigitalMarketing from '@/components/sections/DigitalMarketing';
 // import CareersServices from '@/components/sections/CareersServices';
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function DigitalMarketingPage() {
 		title="Digital Marketing" 
 		description="Accelerate Your Online Growth with Expert Digital Marketing Solutions. Digital Marketing in KVS Techflow"
 	  />
-	  <DigitalMarketing />
+	  {/* <DigitalMarketing /> */}
 	  {/* <Team /> */}
 	</>
   );
