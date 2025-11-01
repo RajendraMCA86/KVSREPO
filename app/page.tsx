@@ -11,7 +11,10 @@ import Team from '@/components/sections/Team';
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero 
+        title="Innovative Technology Solutions for Modern Businesses"
+        subtitle="Transform your business with cutting-edge technology and expert solutions. We help companies navigate digital transformation successfully."
+      />
       <About />
       <Services />
       {/* <Team /> */}

@@ -51,18 +51,18 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
               {service.features.map((feature, index) => (
                 <Link 
                   key={index}
-                  href={feature.toLowerCase().includes('seo optimization') ? '/services/digital-marketing/seo' : '#'}
-                  className={feature.toLowerCase().includes('seo optimization') ? 'cursor-pointer' : ''}
+                  href={getFeatureLink(feature)}
+                  className={getFeatureLink(feature) !== '#' ? 'cursor-pointer' : ''}
                 >
                   <Card
                     className={`bg-gray-50 border-none rounded-xl shadow-lg 
                     transform transition-transform duration-300 hover:scale-105 
-                    ${feature.toLowerCase().includes('seo optimization') ? 'hover:bg-primary/5' : ''}`}
+                    ${getFeatureLink(feature) !== '#' ? 'hover:bg-primary/5' : ''}`}
                   >
                     <CardContent className="pt-6">
                       <div className="flex justify-between items-center">
                         <p className="text-gray-800">{feature}</p>
-                        {feature.toLowerCase().includes('seo optimization') && (
+                        {getFeatureLink(feature) !== '#' && (
                           <ArrowRight className="w-5 h-5 text-primary" />
                         )}
                       </div>
@@ -109,6 +109,24 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
       </div>
     </section>
   );
+}
+
+function getFeatureLink(feature: string): string {
+  const featureLower = feature.toLowerCase();
+  if (featureLower.includes('seo')) {
+    return '/services/digital-marketing/seo';
+  } else if (featureLower.includes('content marketing')) {
+    return '/services/digital-marketing/content-marketing';
+  } else if (featureLower.includes('social media')) {
+    return '/services/digital-marketing/social-media-marketing';
+  } else if (featureLower.includes('email marketing')) {
+    return '/services/digital-marketing/email-marketing';
+  } else if (featureLower.includes('identity management')) {
+    return '/services/digital-marketing/identity-management';
+  } else if (featureLower.includes('compliance framework')) {
+    return '/services/digital-marketing/compliance-frameworks';
+  }
+  return '#';
 }
 
 function getTechnologies(serviceId: string): string[] {

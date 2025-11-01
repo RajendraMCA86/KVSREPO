@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-export default function Hero() {
+interface HeroProps {
+  title: string;
+  subtitle: string;
+  imageUrl?: string;
+}
+
+export default function Hero({ title, subtitle, imageUrl }: HeroProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -28,7 +34,7 @@ export default function Hero() {
         // style={{ y, opacity }}
       >
         <Image
-          src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src={imageUrl || "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600"}
           alt="Digital Technology Background"
           fill
           style={{ objectFit: 'cover' }}
@@ -46,7 +52,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            Innovative Technology Solutions for Modern Businesses
+            {title}
           </motion.h1>
           
           <motion.p
@@ -55,8 +61,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Transform your business with cutting-edge technology and expert solutions. 
-            We help companies navigate digital transformation successfully.
+            {subtitle}
           </motion.p>
           
           <motion.div
