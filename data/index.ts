@@ -193,16 +193,16 @@ export const services: Service[] = [
     ],
     offerings: [
       {
-        title: "SEO Services",
-        description: "Optimize your website to rank higher in search engine results and attract organic traffic."
+        title: "SEO Services – Rank Higher, Drive More Organic Traffic",
+        description: "At KVS Techflow, we don’t just improve your rankings—we help you generate real business growth through data-driven SEO strategies. From technical audits to content optimization, we align every step with your business goals."
       },
       {
         title: "Content Marketing",
-        description: "Create and distribute valuable content to engage your target audience and drive conversions."
+        description: "Perfect! Here’s a complete, ready-to-publish webpage content draft for your Content Marketing Services page. I’ve included headings, subheadings, descriptive text, and package details."
       },
       {
         title: "Social Media Management",
-        description: "Manage your social media presence and engage with your audience effectively."
+        description: "Absolutely! Here’s a complete, ready-to-publish webpage content draft for your Social Media Management (SMM) Services page."
       },
       {
         title: "Pay per Click Advertising",

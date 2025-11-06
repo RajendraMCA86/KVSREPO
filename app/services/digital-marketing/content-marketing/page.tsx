@@ -1,63 +1,148 @@
+"use client";
 import { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 
-export const metadata: Metadata = {
-  title: "Content Marketing Services - KVS",
-  description: "Elevate your brand with our expert content marketing services. We create engaging, valuable content that drives traffic and converts leads.",
-};
-
+import React from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 export default function ContentMarketingPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Hero
-        title="Content Marketing Services"
-        subtitle="Create engaging content that resonates with your audience and drives results"
-        // imageUrl="/images/content-marketing-hero.jpg"
-      />
+     <div>
+        <div className='bg-gradient-to-r from-gray-700 to-gray-900 py-16'>
+        </div>
+
+    <div className="max-w-7xl mx-auto px-8 py-16">
+      {/* Hero Section */}
+      <motion.div 
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          Content Marketing
+        </h1>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Perfect! Here’s a complete, ready-to-publish webpage content draft for your Content Marketing Services page. I’ve included headings, subheadings, descriptive text, and package details:
+        </p>
+      </motion.div>
+
       
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Our Content Marketing Approach</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Strategic Planning</h3>
-              <p className="text-gray-600">Develop comprehensive content strategies aligned with your business goals and target audience.</p>
-            </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Content Creation</h3>
-              <p className="text-gray-600">Create high-quality, engaging content across various formats and platforms.</p>
-            </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Content Distribution</h3>
-              <p className="text-gray-600">Strategically distribute content across multiple channels to maximize reach and engagement.</p>
-            </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Why Content Marketing Works</h3>
+         <p className="text-gray-600">Content marketing is more than just writing—it’s a strategic approach that helps your business</p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li><b>Improve SEO:</b> Drive organic traffic and boost search engine rankings.</li>
+              <li><b>Build Trust:</b> Establish your brand as an authority in your industry.</li>
+              <li><b>Generate Leads:</b> Convert readers into prospects and loyal customers.</li>
+             <li><b>Support Growth:</b> Nurture your audience throughout the buyer’s journey..</li>
+           </ul>
+      </div>
+      <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Our Content Marketing Services</h3>
+         <p className="text-gray-600">We provide a full range of content creation services tailored to your business needs</p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li><b>Blog Writing:</b> Engaging, SEO-friendly articles that attract and educate your audience.</li>
+              <li><b>Web & Landing Page Content::</b> Clear, persuasive content designed to convert visitors.</li>
+              <li><b>Infographics / Visual Content:</b> Data-driven visuals that simplify complex ideas.</li>
+             <li><b>eBooks, Case Studies & Whitepapers:</b> Long-form content to demonstrate expertise and authority.</li>
+           </ul>
+      </div>
+
+      <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Our Process</h3>
+         <p className="text-gray-600">We follow a proven, step-by-step content marketing process <b>Research → Creation → Distribution → Reporting
+</b></p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li><b>Research:</b> Audience analysis, industry trends, and keyword research.</li>
+              <li><b>Creation:</b> High-quality content crafted to engage and convert..</li>
+              <li><b>Distribution:</b> Share across blogs, social media, email campaigns, and other channels.</li>
+             <li><b>Reporting:</b> Track performance, engagement, and ROI with detailed analytics.</li>
+           </ul>
+      </div>
+
+      
+
+
           </div>
         </div>
       </section>
 
       <section className="w-full py-12 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services Include</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Content Marketing Packages</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Blog Writing & Management</h3>
-              <p className="text-gray-600">Regular, high-quality blog posts that establish thought leadership and drive organic traffic.</p>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Content Strategy</h3>
-              <p className="text-gray-600">Comprehensive content planning aligned with your business objectives.</p>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Content Creation</h3>
-              <p className="text-gray-600">Expert creation of various content types including articles, whitepapers, and case studies.</p>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-4">Content Analytics</h3>
-              <p className="text-gray-600">Regular performance analysis and optimization of content strategies.</p>
-            </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Basic Packag</h3>
+         <p className="text-gray-600">Ideal for startups & small businesses</p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li>4 Blog Posts / Month.</li>
+              <li>2 Custom Graphics / Month.</li>
+              <li>1 Infographic or Visual Content</li>
+             <li>Monthly Performance Report.</li>
+           </ul>
+      </div>
+
+ <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Growth Package </h3>
+         <p className="text-gray-600">Designed for growing brands</p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li>8 Blog Posts / Month.</li>
+              <li>5 Custom Graphics / Month</li>
+              <li>2 Infographics or Visual Conten</li>
+             <li>1 eBook or Case Study per quarter.</li>
+           </ul>
+      </div>
+
+       <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg>
+              </div>
+          <h3 className="text-xl font-semibold mb-3">Premium Package</h3>
+         <p className="text-gray-600">Full-scale content marketing</p>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+              <li>12 Blog Posts / Month.</li>
+              <li>8 Custom Graphics / Month.</li>
+              <li>4 Infographics / Visual Content
+</li>
+             <li>1 eBook, Case Study, or Whitepaper per month.</li>
+             <li>Weekly Performance Reports
+.</li>
+
+           </ul>
+      </div>
+
           </div>
         </div>
       </section>
-    </main>
+    </div>
+    </div>
   );
 }

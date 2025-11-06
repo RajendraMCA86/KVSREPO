@@ -21,9 +21,19 @@ export default function SEOPage() {
           Search Engine Optimization
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Drive organic traffic and improve your website's visibility with our comprehensive SEO services.
+          At KVS Techflow, we don’t just improve your rankings—we help you generate real business growth through data-driven SEO strategies. From technical audits to content optimization, we align every step with your business goals.
         </p>
       </motion.div>
+      <div className="text-4xl md:text-5xl font-bold mb-6">
+        <h2 className="text-2xl font-semibold mb-4">Why SEO Matters</h2>
+        <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>75% of users never scroll past the first page of Google search results.</li>
+          <li>Businesses that appear in the top 3 search results capture over 60% of clicks.</li>
+          <li>SEO delivers one of the highest ROIs in digital marketing compared to paid channels.</li>
+          <li>With billions of daily searches, SEO is no longer optional—it’s essential to connect with your audience.</li>
+        </ul>
+      </div>
+              <h2 className="text-2xl font-semibold mb-4">Our SEO Services</h2>
 
       {/* Key Features */}
       <motion.div 
@@ -32,14 +42,72 @@ export default function SEOPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
+           <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            </svg>
+        </div>
+          <h3 className="text-xl font-semibold mb-3">On-Page SEO</h3>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>Optimization of titles, meta tags, headers, and URLs</li>
+          <li>Content optimization with targeted keywords.</li>
+          <li>Internal linking for better user flow.</li>
+        </ul>
+        </div>
+  <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            </svg>
+        </div>
+          <h3 className="text-xl font-semibold mb-3">Off-Page SEO</h3>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>High-quality backlink building</li>
+          <li>Guest posting & digital PR.</li>
+          <li>Reputation & authority management</li>
+        </ul>
+   </div>
+   <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            </svg>
+        </div>
+          <h3 className="text-xl font-semibold mb-3">Technical & Local SEO</h3>
+             <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>Website audits for crawlability & indexing
+</li>
+          <li>Page speed optimization.</li>
+          <li>Mobile-friendly & Core Web Vitals compliance</li>
+           <li>Google Business Profile (GMB) optimization</li>
+          <li>Local keywords & citations</li>
+          <li>Review management to boost local trust</li>
+        </ul>
+   </div>
+
+
+
+ 
+      </motion.div>
+<h2 className="text-2xl font-semibold mb-4">SEO Packages</h2>
+          {/* Key Features */}
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+       
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
             <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">Keyword Research & Analysis</h3>
-          <p className="text-gray-600">In-depth research to target the most valuable keywords for your business.</p>
+          <h3 className="text-xl font-semibold mb-3">Starter (Best for Small Businesses)</h3>
+               <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>Keyword research & setup</li>
+          <li>On-page optimization (up to 10 pages).</li>
+          <li>Monthly audit & report</li>
+        </ul>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -48,8 +116,12 @@ export default function SEOPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">On-Page Optimization</h3>
-          <p className="text-gray-600">Technical optimization of your website's content and structure.</p>
+          <h3 className="text-xl font-semibold mb-3">Growth (For Expanding Brands)</h3>
+               <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>Starter + Technical SEO fixes</li>
+          <li>Local SEO setup</li>
+          <li>Backlink strategy (high-quality link building) </li>
+        </ul>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -58,69 +130,17 @@ export default function SEOPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
             </svg>
           </div>
-          <h3 className="text-xl font-semibold mb-3">Link Building</h3>
-          <p className="text-gray-600">Strategic building of high-quality backlinks to improve authority.</p>
+          <h3 className="text-xl font-semibold mb-3">Why Choose KVS Techflow</h3>
+   <ul className="list-disc list-inside space-y-3 text-gray-600">
+          <li>ROI-Driven Approach: Every strategy is tied to measurable business growth</li>
+          <li>Future-Ready SEO: We adapt to Google algorithm updates and AI search trends</li>
+          <li>Transparency: Regular reports, clear deliverables, and dedicated support </li>
+          <li>Full Digital Ecosystem: Seamless integration with PPC, content marketing, and social media </li>
+
+        </ul>
         </div>
       </motion.div>
 
-      {/* Process Section */}
-      <motion.div 
-        className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <h2 className="text-3xl font-bold text-center mb-12">Our SEO Process</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">Technical SEO Audit</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Website structure analysis
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Site speed optimization
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Mobile responsiveness check
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">Content Strategy</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Keyword mapping
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Content optimization
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Regular content updates
-              </li>
-            </ul>
-          </div>
-        </div>
-      </motion.div>
 
       {/* CTA Section */}
       <motion.div 
