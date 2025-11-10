@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
@@ -58,6 +58,8 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   // track which service's nested submenu is open on desktop
   const [nestedOpen, setNestedOpen] = useState<string | null>(null);
+  // timer ref to debounce closing nested menus to avoid flicker when moving pointer
+  const nestedCloseTimer = useRef<number | null>(null);
   // track expanded service on mobile (to show children)
   const [expandedService, setExpandedService] = useState<string | null>(null);
   
@@ -121,8 +123,20 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
                 <div
                   key={service.href}
                   className="relative group"
-                  onMouseEnter={!isMobile && service.children ? () => setNestedOpen(service.href) : undefined}
-                  onMouseLeave={!isMobile && service.children ? () => setNestedOpen(prev => prev === service.href ? null : prev) : undefined}
+                  onMouseEnter={!isMobile && service.children ? () => {
+                    if (nestedCloseTimer.current) {
+                      window.clearTimeout(nestedCloseTimer.current);
+                      nestedCloseTimer.current = null;
+                    }
+                    setNestedOpen(service.href);
+                  } : undefined}
+                  onMouseLeave={!isMobile && service.children ? () => {
+                    // delay closing slightly to allow pointer to reach nested panel
+                    nestedCloseTimer.current = window.setTimeout(() => {
+                      setNestedOpen(prev => prev === service.href ? null : prev);
+                      nestedCloseTimer.current = null;
+                    }, 150);
+                  } : undefined}
                 >
                   {/* Desktop: if there are children, show a Link for the parent and render nested menu to the right on hover */}
                   {!isMobile && service.children ? (
@@ -137,7 +151,22 @@ const ServicesSubmenu: React.FC<ServiceSubmenuProps> = ({
                       </Link>
 
                       {nestedOpen === service.href && (
-                        <div className="absolute left-full top-0 ml-3 w-64 min-w-[16rem] rounded-lg bg-white shadow-2xl ring-1 ring-black/10 py-3 z-50 border border-gray-100">
+                        <div
+                          onMouseEnter={() => {
+                            if (nestedCloseTimer.current) {
+                              window.clearTimeout(nestedCloseTimer.current);
+                              nestedCloseTimer.current = null;
+                            }
+                            setNestedOpen(service.href);
+                          }}
+                          onMouseLeave={() => {
+                            nestedCloseTimer.current = window.setTimeout(() => {
+                              setNestedOpen(prev => prev === service.href ? null : prev);
+                              nestedCloseTimer.current = null;
+                            }, 150);
+                          }}
+                          className="absolute right-full top-0 ml-3 w-64 min-w-[20rem] rounded-lg bg-white shadow-2xl ring-1 ring-black/10 py-3 z-60 border border-gray-100"
+                        >
                           <div className="px-3 pb-2">
                             <div className="text-xs uppercase tracking-wider text-gray-500 font-semibold">{service.name}</div>
                           </div>
